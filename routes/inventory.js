@@ -17,6 +17,14 @@ module.exports = ({
               error: err.message
           }));
   });
+  /* GET inventory by id listing. */
+  router.get('/:id', (req, res) => {
+    getInventoryById(req.params.id)
+        .then((item) => res.json(item))
+        .catch((err) => res.json({
+            error: err.message
+        }));
+});
 
   // router.get('/posts', (req, res) => {
   //     getUsersPosts()
